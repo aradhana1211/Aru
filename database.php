@@ -1,13 +1,13 @@
 <?php
 define('DB_HOST','localhost');
 define('DB_USER','root');
-define('DB_PASS','');
+define('DB_PASS','admin');
 define('DB_NAME','penabaf5_db');
 error_reporting(1);
 try
 {
 $dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASS,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
-$con=mysqli_connect("localhost","root","","penabaf5_db");
+$con=mysqli_connect("localhost","root","admin","penabaf5_db");
 }
 catch (PDOException $e)
 {

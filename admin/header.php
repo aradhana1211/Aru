@@ -230,9 +230,27 @@ if(!isset($_SESSION["user_name"]))
                 </li>
                 <li class="nav-item">
                   <a href="search.php" class="nav-link">
-                    <i class="nav-icon far fa-search"></i>
+                    <i class="nav-icon fas fa-search"></i>
                     <span class="nav-text fadeable">
                	      <span>Search</span>
+                    </span>
+                  </a>
+                  <b class="sub-arrow"></b>
+                </li>
+                <li class="nav-item">
+                  <a href="add.php" class="nav-link">
+                    <i class="nav-icon fas fa-plus"></i>
+                    <span class="nav-text fadeable">
+                      <span>Add lead</span>
+                    </span>
+                  </a>
+                  <b class="sub-arrow"></b>
+                </li>
+                <li class="nav-item">
+                  <a href="uploadlead.php" class="nav-link">
+                    <i class="nav-icon fas fa-upload"></i>
+                    <span class="nav-text fadeable">
+                      <span>Upload Leads In Excel</span>
                     </span>
                   </a>
                   <b class="sub-arrow"></b>

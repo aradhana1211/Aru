@@ -1,97 +1,23 @@
 
-<html lang="en" class="no-js">
+<?php include('header.php');?>
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<meta name="theme-color" content="#3e454c">
-	
-	<title>Manage Users</title>
-
-	<!-- Font awesome -->
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<!-- Sandstone Bootstrap CSS -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<!-- Bootstrap Datatables -->
-	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
-	<!-- Bootstrap social button library -->
-	<link rel="stylesheet" href="css/bootstrap-social.css">
-	<!-- Bootstrap select -->
-	<link rel="stylesheet" href="css/bootstrap-select.css">
-	<!-- Bootstrap file input -->
-	<link rel="stylesheet" href="css/fileinput.min.css">
-	<!-- Awesome Bootstrap checkbox -->
-	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
-	<!-- Admin Stye -->
-	<link rel="stylesheet" href="css/style.css">
-  <style>
-
-
-	.errorWrap {
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #dd3d36;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-.succWrap{
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #5cb85c;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-
-		</style>
-<style type="text/css">
-
-			input[type=text] {
-		 	width: 200px;height: 30px;
-			}
-			select{height: 30px;
-			width: 200px;
-			}
-			input[type=date] {
-			width: 200px;
-			height: 30px;
-
-			}
-			input[type=button] {
-		 	width:100px;
-			height: 30px;
-			}	
-			input[type=submit] {
-		 	width:100px;
-			height: 30px;
-		 	
-			}
-		</style>
-</head>
-
-<body>
-	<?php include('includes/header.php');?>
-
-	<div class="ts-main-content">
-		<?php include('includes/leftbar.php');?>
-		<div class="content-wrapper">
-			<div class="container-fluid">
-
+	<div  role="main" class="main-content">	
+		<div class="page-content container container-plus">
+			<div class="page-header mb-2 pb-2 flex-column flex-sm-row align-items-start align-items-sm-center py-25 px-1">
+	            <h1 class="page-title text-primary-d2 text-140">
+	                Search
+	                <small class="page-info text-dark-m3">
+	                    <i class="fa fa-angle-double-right text-80"></i>
+	                    Manage
+	                </small>
+	            </h1>
+	        </div>
 				<div class="row">
 					<div class="col-md-12">
-
-						
-
-						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
 							
 							<div class="panel-body">
 							
-								<h2>&nbsp &nbsp &nbsp &nbsp Search</h2>
 	<center>
 		<form action="admin-fetch.php" method="post">
 		<table border="a" style="width: 100%;height: 645px; border-collapse: collapse;">
@@ -104,8 +30,7 @@
 				 
 				$ac=array();
 				$query="SELECT name FROM users WHERE designation='user'";
-				$connect = mysqli_connect("sg2plcpnl0041", "franmax", "franmax", "i7036418_wp1");
-  				$filter_Result=mysqli_query($connect, $query);  
+  				$filter_Result=mysqli_query($con, $query);  
 				while($row=mysqli_fetch_array($filter_Result))
 				{	if($row["name"]!=null){
 					if(in_array(strtolower($row["name"]), $ac))
@@ -129,10 +54,10 @@
                 
 				<?php
 				//$connect = mysqli_connect("sg2plcpnl0041", "franmax", "franmax", "i7036418_wp1");
-				$query1="SELECT username FROM admin";
-				$filter_Result=mysqli_query($connect, $query1);  
+				$query1="SELECT user_name FROM admin";
+				$filter_Result=mysqli_query($con, $query1);  
 				$row=mysqli_fetch_array($filter_Result);
-				echo "<option value='".$row["username"]."'>".$row["username"]."</option>" ; 
+				echo "<option value='".$row["user_name"]."'>".$row["user_name"]."</option>" ; 
 				 echo "<option value='".$_SESSION['name']."'>".$_SESSION['name']."</option>"; ?>
 				</select>
 				</td>
@@ -207,7 +132,7 @@
 				</div>
 
 			</div>
-		</div>
+		
 	</div>
 
 	<!-- Loading Scripts -->
@@ -227,6 +152,4 @@
 					}, 3000);
 					});
 		</script>
-		
-</body>
-</html>
+

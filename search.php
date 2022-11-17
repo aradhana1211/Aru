@@ -6,7 +6,7 @@ $search = mysqli_real_escape_string($con,$_POST["search"]);
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12 text-center">
-							<h2>Find Your Product</h2>
+							<h2>Find Your ssProduct</h2>
 							<ol class="breadcrumb highlightlinks">
 								<li> <a href="index.php">
 							Home
