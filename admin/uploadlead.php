@@ -3,6 +3,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
+  
+include("header.php");
 // $connect = mysqli_connect("sg2plcpnl0041", "franmax", "franmax", "i7036418_wp1");
 
 $output = '';
@@ -15,7 +17,8 @@ if(isset($_POST["import"]))
  {
      
   $file = $_FILES["excel"]["tmp_name"]; // getting temporary source of excelfile
-  include("PHPExcel/IOFactory.php"); // Add PHPExcel Library in this code
+  include("PHPExcel-1.8/Classes/PHPExcel/IOFactory.php"); 
+  include_once('PHPExcel-1.8/Classes/PHPExcel.php');// Add PHPExcel Library in this code
   PHPExcel_Settings::setZipClass(PHPExcel_Settings::PCLZIP);
   $PHPExcel = PHPExcel_IOFactory::load($file); // create object of PHPExcel library by using load() method and in load method define path of selected file
  
@@ -46,7 +49,8 @@ if(isset($_POST["import"]))
    
   
     $query = "INSERT INTO franmax(client_name,brand,email,mobile,source,city,state,investment,industry,assign_to,date,remarks,count,assign_by,status,comment) VALUES ('".$name."', '".$brand."', '".$email."', '".$mobile."', '".$source."', '".$city."', '".$state."', '".$investment."', '".$industry."', '".$assign_to."', '".$date."', '".$remarks."', '".$count."', '".$assign_by."', '".$status."', '".$comment."')";
-    mysqli_query($connect, $query);
+    // echo $query;
+    mysqli_query($con, $query);
     $output .= '<td>'.$name.'</td>';
     $output .= '<td>'.$email.'</td>';
     $output .= '</tr>';
@@ -64,12 +68,20 @@ if(isset($_POST["import"]))
 ?>
 
 
-    <?php include('header.php');?>
 
-    <div class="ts-main-content">
-        <div class="content-wrapper">
-            <div class="container-fluid">
 
+    <div  role="main" class="main-content">
+        
+          <div class="page-content container container-plus">
+              <div class="page-header mb-2 pb-2 flex-column flex-sm-row align-items-start align-items-sm-center py-25 px-1">
+              <h1 class="page-title text-primary-d2 text-140">
+                  Upload lead's excel file
+                  <small class="page-info text-dark-m3">
+                      <i class="fa fa-angle-double-right text-80"></i>
+                      Manage
+                  </small>
+              </h1>
+          </div>
                 <div class="row">
                     <div class="col-md-12">
 
@@ -84,7 +96,7 @@ if(isset($_POST["import"]))
                     
                        
                        <div class="container box" style="border: 0px;">
-   <h3 >Upload lead's excel file</h3><br />
+   <br />
    <form method="post" enctype="multipart/form-data">
     
     <label>Select Excel File</label>
@@ -102,8 +114,7 @@ if(isset($_POST["import"]))
   </div>
                         </div>
                
-            
-        </div>
+      
     </div>
     
   
