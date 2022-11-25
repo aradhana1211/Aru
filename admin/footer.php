@@ -181,22 +181,34 @@ if ( window.history.replaceState ) {
 
 
         // specify position of table buttons
-        console.log(window.location.pathname.split("/")[3]);
-        if(window.location.pathname.split("/")[3] != 'userindex.php'){
-          $('.table-tools-col')
-          .append($_table.buttons().container())
-          // move searchbox into table header
-          .find('.dataTables_filter').appendTo('.page-tools').find('input').addClass('pl-45 radius-round').removeClass('form-control-sm')
-          // and add a "+" button
-          .end().append('<button data-rel="tooltip" type="button" class="btn radius-round btn-outline-primary border-2 btn-sm ml-2" data-toggle="modal" data-target="#loginModal" title="Add New"><i class="fa fa-plus"></i></button>')
-
-        } else {
+        console.log(window.location.pathname.split("/").length);
+        var count = window.location.pathname.split("/").length - 1;
+        // window.location.pathname.split("/").length
+        if(window.location.pathname.split("/")[count] == 'userindex.php'){
           $('.table-tools-col')
           .append($_table.buttons().container())
           // move searchbox into table header
           .find('.dataTables_filter').appendTo('.page-tools').find('input').addClass('pl-45 radius-round').removeClass('form-control-sm')
           // and add a "+" button
           .end().append('<a data-rel="tooltip" type="button" class="btn radius-round btn-outline-primary border-2 btn-sm ml-2" href="useradd.php" title="Add New"><i class="fa fa-plus"></i></a>')
+          
+
+        } else if(window.location.pathname.split("/")[count] == 'brandindex.php'){
+
+          $('.table-tools-col')
+          .append($_table.buttons().container())
+          // move searchbox into table header
+          .find('.dataTables_filter').appendTo('.page-tools').find('input').addClass('pl-45 radius-round').removeClass('form-control-sm')
+          // and add a "+" button
+          .end().append('<a data-rel="tooltip" type="button" class="btn radius-round btn-outline-primary border-2 btn-sm ml-2" href="brandadd.php" title="Add New"><i class="fa fa-plus"></i></a>')
+
+        } else {
+         $('.table-tools-col')
+          .append($_table.buttons().container())
+          // move searchbox into table header
+          .find('.dataTables_filter').appendTo('.page-tools').find('input').addClass('pl-45 radius-round').removeClass('form-control-sm')
+          // and add a "+" button
+          .end().append('<button data-rel="tooltip" type="button" class="btn radius-round btn-outline-primary border-2 btn-sm ml-2" data-toggle="modal" data-target="#loginModal" title="Add New"><i class="fa fa-plus"></i></button>')
 
         }
         

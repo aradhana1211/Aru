@@ -285,6 +285,19 @@ if(!isset($_SESSION["user_name"]))
 
                 </li>
                 <?php } ?>
+                 <li class="nav-item">
+                  <a href="brandindex.php" class="nav-link">
+                    <i class="nav-icon fa fa-bold"></i>
+                    <span class="nav-text fadeable">
+                  <span>Brand</span>
+                    </span>
+
+
+                  </a>
+
+                  <b class="sub-arrow"></b>
+
+                </li>
                 <li class="nav-item">
 
                   <a href="quatation.php" class="nav-link">

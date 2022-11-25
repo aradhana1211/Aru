@@ -30,6 +30,23 @@ if(isset($_GET['user_id']))
     mysqli_close($con);
 	echo " <meta http-equiv='refresh' content='0;URL=userindex.php' />";
 }
+if(isset($_GET['brand_id']))
+{
+    $id = $_GET['brand_id'];
+    $res = mysqli_query($con, "SELECT *  FROM brand WHERE id = '$id'");
+   $query = "DELETE FROM `brand` WHERE id = '$id'";
+    
+    $result = mysqli_query($con, $query);
+    
+    if($result)
+    {
+        echo 'brand Deleted';
+    }else{
+        echo 'brand Not Deleted';
+    }
+    mysqli_close($con);
+    echo " <meta http-equiv='refresh' content='0;URL=brandindex.php' />";
+}
 
 if(isset($_GET['banner_id']))
 {
