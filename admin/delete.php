@@ -47,6 +47,23 @@ if(isset($_GET['brand_id']))
     mysqli_close($con);
     echo " <meta http-equiv='refresh' content='0;URL=brandindex.php' />";
 }
+if(isset($_GET['news_id']))
+{
+    $id = $_GET['news_id'];
+    $res = mysqli_query($con, "SELECT *  FROM news WHERE id = '$id'");
+   $query = "DELETE FROM `news` WHERE id = '$id'";
+    
+    $result = mysqli_query($con, $query);
+    
+    if($result)
+    {
+        echo 'News Deleted';
+    }else{
+        echo 'News Not Deleted';
+    }
+    mysqli_close($con);
+    echo " <meta http-equiv='refresh' content='0;URL=newsindex.php' />";
+}
 
 if(isset($_GET['banner_id']))
 {

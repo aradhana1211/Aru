@@ -326,6 +326,20 @@ if(!isset($_SESSION["user_name"]))
                   <b class="sub-arrow"></b>
 
                 </li>
+                <li class="nav-item">
+
+                  <a href="newsindex.php" class="nav-link">
+                    <i class="nav-icon far fa-newspaper"></i>
+                    <span class="nav-text fadeable">
+                  <span>News</span>
+                    </span>
+
+
+                  </a>
+
+                  <b class="sub-arrow"></b>
+
+                </li>
 
               </ul>
 

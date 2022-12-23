@@ -202,6 +202,15 @@ if ( window.history.replaceState ) {
           // and add a "+" button
           .end().append('<a data-rel="tooltip" type="button" class="btn radius-round btn-outline-primary border-2 btn-sm ml-2" href="brandadd.php" title="Add New"><i class="fa fa-plus"></i></a>')
 
+        }  else if(window.location.pathname.split("/")[count] == 'newsindex.php'){
+
+          $('.table-tools-col')
+          .append($_table.buttons().container())
+          // move searchbox into table header
+          .find('.dataTables_filter').appendTo('.page-tools').find('input').addClass('pl-45 radius-round').removeClass('form-control-sm')
+          // and add a "+" button
+          .end().append('<a data-rel="tooltip" type="button" class="btn radius-round btn-outline-primary border-2 btn-sm ml-2" href="newsadd.php" title="Add New"><i class="fa fa-plus"></i></a>')
+
         } else {
          $('.table-tools-col')
           .append($_table.buttons().container())

@@ -1,13 +1,8 @@
 <?php
 error_reporting(1);
-  include "database.php";
+  include "../database.php";
   if(isset($_POST['submit']))
   { 
-    
-    $first_name=$_POST['first_name'];
-
-    $last_name=$_POST['last_name'];
-   
     $company=$_POST['company'];
     $address=$_POST['address'];
     $city=$_POST['city'];
@@ -19,27 +14,7 @@ error_reporting(1);
     $email_address=$_POST['email_address'];
     $institute1=$_POST['institute1'];
     $degree1=$_POST['degree1'];
-    $year1=$_POST['year1'];
-    $institute2=$_POST['institute2'];
-    $degree2=$_POST['degree2'];
-    $year2=$_POST['year2'];
-    $ibp_program=$_POST['ibp_program'];
-    $referee_name=$_POST['referee_name'];
-    $referee_email=$_POST['referee_email'];
-    $referee_company=$_POST['referee_company'];
-    $experience_company1=$_POST['experience_company1'];
-    $position1=$_POST['position1'];
-    $duration1=$_POST['duration1'];
-    $from1=$_POST['from1'];
-    $to1=$_POST['to1'];
-    $experience_company2=$_POST['experience_company2'];
-    $position2=$_POST['position2'];
-    $duration2=$_POST['duration2'];
-    $from2=$_POST['from2'];
-    $to2=$_POST['to2'];
-
-    $date1=$_POST['date1'];
-    $date2=$_POST['date2'];
+   
    
     $query =  mysqli_query($con,"INSERT ibp_user_info SET first_name='$first_name',last_name='$last_name',company='$company',address='$address',city='$city',state='$state',postal_code='$postal_code' ,telephone='$telephone' ,fax='$fax' ,email='$email_address' ,institute1='$institute1' ,degree1='$degree1' ,year1='$year1',institute2='$institute2' ,degree2='$degree2' ,year2='$year2' ,hear_about_IBP='$ibp_program' ,referee_name='$referee_name' ,referee_email='$referee_email' ,referee_company='$referee_company' ,experience_company1='$experience_company1' ,position1='$position1',duration1='$duration1',from1='$from1',to1='$to1',experience_company2='$experience_company2' ,position2='$position2',duration2='$duration2',from2='$from2',to2='$to2' ,franmax_start_date='$date1',partner_start_date  ='$date2'");
 
