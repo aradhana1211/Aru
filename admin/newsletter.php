@@ -4,7 +4,7 @@
           <div class="page-content container container-plus">
             <div class="page-header mb-2 pb-2 flex-column flex-sm-row align-items-start align-items-sm-center py-25 px-1">
               <h1 class="page-title text-primary-d2 text-140">
-                Contact us
+                Enquiry
                 <small class="page-info text-dark-m3">
                   <i class="fa fa-angle-double-right text-80"></i>
                   Manage
@@ -54,7 +54,7 @@
 
                   <tbody class="pos-rel">
 				  
-                   <?php $sn=1; $sql = mysqli_query($con, "SELECT * FROM contact_form ORDER BY con_id ASC"); 
+                   <?php $sn=1; $sql = mysqli_query($con, "SELECT * FROM contact_form ORDER BY con_id DESC"); 
 			while($rows = mysqli_fetch_array($sql)) { ?>
 			
                     <tr class="d-style bgc-h-default-l4">
@@ -80,7 +80,7 @@
                             
                         </span>
                         <span>
-                            <a data-rel="tooltip" title="Delete" href="delete.php?news_id=<?php echo $rows["news_id"];?>" >
+                            <a data-rel="tooltip" title="Delete" href="delete.php?contact_id=<?php echo $rows["con_id"];?>" >
                                 <i class="fa fa-trash text-120" ></i>
                             </a>
                         </span>

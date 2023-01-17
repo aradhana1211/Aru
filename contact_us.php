@@ -74,7 +74,7 @@ extract($_POST);
 									<div class="media">
 										<div class="media-left"> <i class="fa fa-phone highlight2 fontsize_18"></i> </div>
 										<div class="media-body">
-											<h5 class="media-heading grey">Phone:</h5> 	+91 7990206696 </div>
+											<h5 class="media-heading grey">Phone:</h5><a href="tel:+917990206696"><span>+91 7990206696</span></a> </div>
 									</div>
 								</li>
 								
@@ -82,7 +82,7 @@ extract($_POST);
 									<div class="media">
 										<div class="media-left"> <i class="fa fa-envelope highlight2 fontsize_18"></i> </div>
 										<div class="media-body greylinks">
-											<h5 class="media-heading grey">Email:</h5> 	penabiotech@gmail.com</div>
+											<h5 class="media-heading grey">Email:</h5>  <a href="mailto:penabiotech@gmail.com"><span>penabiotech@gmail.com</span></a>	</div>
 									</div>
 								</li>
 							</ul>

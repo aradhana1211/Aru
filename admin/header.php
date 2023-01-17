@@ -261,7 +261,7 @@ if(!isset($_SESSION["user_name"]))
                   <a href="newsletter.php" class="nav-link">
                     <i class="nav-icon far fa-image"></i>
                     <span class="nav-text fadeable">
-               	  <span>Contact us</span>
+               	  <span>Enquiry</span>
                     </span>
 
 

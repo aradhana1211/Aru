@@ -16,8 +16,6 @@ extract($_POST);
           mysqli_query($con,"insert into contact_form(con_name,con_email,con_mob,con_sub,con_msg)values ('$name','$email','$phone','$subject','$message')");
 			$status="Message Sent...!";
 }
-
-
 ?>
 <button id="btn" style="display:none;" data-toggle="modal" data-target="#exampleModal">Click me</button>
 
@@ -66,7 +64,7 @@ extract($_POST);
 					<ul class="slides">
 					     <?php $sql = mysqli_query($con, "SELECT * FROM banner"); 
 			while($rows = mysqli_fetch_array($sql)) { ?>
-				<li> <img src="../img/home_banner/<?php echo $rows["banner_image"];?>" alt="">
+				<li> <img src="img/home_banner/<?php echo $rows["banner_image"];?>" alt="">
 						</li>
                       
 			<?php  } ?>

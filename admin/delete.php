@@ -150,4 +150,22 @@ if(isset($_GET['con_id']))
 	
 	echo " <meta http-equiv='refresh' content='0;URL=quatation.php' />";
 }
+
+if(isset($_GET['contact_id']))
+{
+    $id = $_GET['contact_id']; 
+   $query = "DELETE FROM `contact_form` WHERE `con_id` = $id";
+    
+    $result = mysqli_query($con, $query);
+    
+    if($result)
+    {
+        echo 'Entry Deleted';
+    }else{
+        echo 'Entry Not Deleted';
+    }
+    mysqli_close($con);
+    
+    echo " <meta http-equiv='refresh' content='0;URL=newsletter.php' />";
+}
 ?>

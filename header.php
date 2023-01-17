@@ -44,6 +44,37 @@
 .owl-carousel.partners-carousel a img {
     opacity: 1!important;
 }
+.dropbtn {
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #19bcdb;
+  min-width: 160px;
+
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #000;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #19bcdb;}
+
+.dropdown:hover .dropdown-content {display: block;}
 
 </style>
 </head>
@@ -231,14 +262,46 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 								<!-- main nav start -->
 								<nav class="mainmenu_wrapper">
 									<ul class="mainmenu nav sf-menu">
-										<li > <a href="index.php">HOME</a></li>
-										<li > <a href="categories.php">PRODUCTS</a></li>
-										<li > <a href="third_party.php">THIRD PARTY MANUFACTURER</a></li>
-										<li> <a href="services.php">SERVICES</a></li>
-										<li> <a href="quality_mgmt.php">QUALITY MANAGEMENT</a></li>
-										<li> <a href="contact_us.php">CONTACT US</a></li>
+										<li class="dropdown" >
+										<!-- <a href="index.php" class="dropbtn">HOME</a> -->
+										<a href="index.php" class="dropbtn">BUSINESS</a>
+										<div class="dropdown-content">
+										    <a href="Sell_Business.php">Sell business</a>
+										    <a href="Buy_Business.php">Buy business</a>
+										 </div>
+										</li>
+										<li   class="dropdown"> 
+											<!-- <a href="categories.php" class="dropbtn">PRODUCTS</a> -->
+											<a href="categories.php" class="dropbtn">Franchise</a>
+											<div class="dropdown-content">
+										    <a href="Sell_Franchise.php">Sell Franchise</a>
+										    <a href="Buy_Franchise.php">Buy Franchise</a>
+										    <a href="#">Lease a Property</a>
+										 	</div>
+										</li>
+										<li  class="dropdown">
+											<!-- <a href="third_party.php" class="dropbtn">THIRD PARTY MANUFACTURER</a> -->
+											<a href="third_party.php" class="dropbtn">Insights</a>
+											<div class="dropdown-content">
+										    <a href="#">News</a>
+										    <a href="#">Blog</a>
+										 	</div>
+										</li>
+										<li  class="dropdown"> 
+											<a href="about.php" class="dropbtn">About</a>
+										</li>
+										<li  class="dropdown">
+											<a href="services.php" class="dropbtn">Services</a>
+										</li>
+										<li  class="dropdown">
+											<a href="contact_us.php" class="dropbtn">Careers</a>
+										</li>
+										<li  class="dropdown">
+											<a href="contact_us.php" class="dropbtn">CONTACT US</a>
+										</li>
 										
 									</ul>
+
 								</nav>
 								<!-- eof main nav -->
 								<!-- header toggler --><span class="toggle_menu"><span></span></span>
