@@ -53,22 +53,42 @@
               <h4 class="modal-title" style="align-content: center;">SELL YOUR BUSINESS</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
+            <?php 
+            $name = $_POST["full_name"];
+            $email = $_POST["email"];
+            $phone = $_POST["phone"];
+            $category = $_POST["category"];
+            $outlet_number = $_POST["outlet_number"];
+            $outlet_location = $_POST["outlet_location"];
+            $amount = $_POST["amount"];
+            $description = $_POST["description"];
+            $brand_name = $_POST["brand_name"];
+
+            if((isset($_POST["full_name"])) && (isset($_POST["email"]))&& (isset($_POST["phone"]))&& (isset($_POST["category"])) && (isset($_POST["outlet_number"])) && (isset($_POST["outlet_location"]))&& (isset($_POST["amount"]))&& (isset($_POST["description"]))) {
+              extract($_POST);
+              mysqli_query($con,"insert into sell_business(full_name,email,phone,category,brand_name,outlet_number,outlet_location,amount,description)values ('$name','$email','$phone','$category','$brand_name','$outlet_number','$outlet_location','$amount','$description')");
+              $status="Message Sent...!";
+            }
+
+
+?>
+            <form method="post" action="">
             <div class="modal-body">
                 <div class="form-group">
                   <label>Full Name</label>
-                  <input type="text" name="Name" class="form-control">
+                  <input type="text" name="full_name" class="form-control">
                 </div>
                 <div class="form-group">
                   <label>Email</label>
-                  <input type="text" name="Email" class="form-control">
+                  <input type="text" name="email" class="form-control">
                 </div>
                 <div class="form-group">
                   <label>Phone</label>
-                  <input type="text" name="Phone" class="form-control">
+                  <input type="text" name="phone" class="form-control">
                 </div>
                 <div class="form-group">
                   <label>Business Catagory</label>
-                       <select name="Business" id="Business" class="form-control">
+                       <select name="category" id="Business" class="form-control">
                         <option value="Food_and_Beverages">Food & Beverages</option>
                         <option value="Retail">Retail</option>
                         <option value="Automobile">Automobile</option>
@@ -82,29 +102,30 @@
                 </div>
                 <div class="form-group">
                   <label>Brand Name</label>
-                  <input type="text" name="BrandName" class="form-control">
+                  <input type="text" name="brand_name" class="form-control">
                 </div>
                  <div class="form-group">
                   <label>No. of Outlets</label>
-                  <input type="text" name="No_of_outlets" class="form-control">
+                  <input type="text" name="outlet_number" class="form-control">
                 </div> 
                 <div class="form-group">
                   <label>Outlet Location to be sold</label>
-                  <input type="text" name="OutletLocation" class="form-control">
+                  <input type="text" name="outlet_location" class="form-control">
                 </div>
                  <div class="form-group">
                   <label>Amount Expected</label>
-                  <input type="text" name="AmmountExpected" class="form-control">
+                  <input type="text" name="amount" class="form-control">
                 </div>
                 <div class="form-group">
                   <label>Description</label>
-                    <textarea id="Description" name="Description" rows="4" cols="50" class="form-control"></textarea>
+                    <textarea id="Description" name="description" rows="4" cols="50" class="form-control"></textarea>
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-inverse btn-success" >Register</button>
+              <button type="submit" class="btn btn-inverse btn-success" >Register</button>
               <button type="button" class="btn btn-inverse btn-danger" data-dismiss="modal">Close</button>
             </div>
+          </form>
           </div>     
         </div>
       </div>

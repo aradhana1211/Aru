@@ -1,9 +1,20 @@
 <?php include("header.php");
-if((isset($_POST["name"])) && (isset($_POST["phone"]))&& (isset($_POST["email"]))&& (isset($_POST["subject"])) ) {
-extract($_POST);
-          mysqli_query($con,"insert into contact_form(con_name,con_email,con_mob,con_sub,con_msg)values ('$name','$email','$phone','$subject','$message')");
-      $status="Message Sent...!";
-}
+           
+
+            $name = $_POST["full_name"];
+            $email = $_POST["email"];
+            $phone = $_POST["phone"];
+            $category = $_POST["category"];
+            $investment_range = $_POST["investment_range"];
+            $outlet_location = $_POST["outlet_location"];
+            $description = $_POST["description"];
+            $brand_name = $_POST["brand_name"];
+
+            // if((isset($_POST["full_name"])) && (isset($_POST["email"]))&& (isset($_POST["phone"]))&& (isset($_POST["category"])) && (isset($_POST["outlet_location"])) && (isset($_POST["investment_range"]))&& (isset($_POST["description"]))&& (isset($_POST["brand_name"]))) {
+            if((isset($_POST)) ) {
+              mysqli_query($con,"insert into buy_business(full_name,email,phone,category,brand_name,outlet_location,investment_range,description)values ('$name','$email','$phone','$category','$brand_name','$outlet_location','$investment_range','$description')");
+              $status="Message Sent...!";
+            }
 ?>
 
 			<section class="page_breadcrumbs ds color parallax section_padding_top_75 section_padding_bottom_75">
@@ -62,22 +73,22 @@ extract($_POST);
           
         </div>
         <div class="modal-body">
-          <form></form>
+          <form  method="post" action="">
            <div class="form-group">
               <label>Full Name</label>
-              <input type="text" name="Name" class="form-control">
+              <input type="text" name="full_name" class="form-control">
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="text" name="Email" class="form-control">
+              <input type="text" name="email" class="form-control">
             </div>
             <div class="form-group">
               <label>Phone</label>
-              <input type="text" name="Phone" class="form-control">
+              <input type="text" name="phone" class="form-control">
             </div>
             <div class="form-group">
               <label>Business Catagory</label>
-                   <select name="Bussiness" id="Bussiness" class="form-control">
+                   <select name="category" id="Bussiness" class="form-control">
                     <option value="Food_and_Beverages">Food & Beverages</option>
                     <option value="Retail">Retail</option>
                     <option value="Automobile">Automobile</option>
@@ -91,15 +102,15 @@ extract($_POST);
             </div>
             <div class="form-group">
               <label>Brand Name</label>
-              <input type="text" name="BrandName" class="form-control">
+              <input type="text" name="brand_name" class="form-control">
             </div>
             <div class="form-group">
               <label>Outlet Location Preferred</label>
-              <input type="text" name="OutletLocation" class="form-control">
+              <input type="text" name="outlet_location" class="form-control">
             </div>
              <div class="form-group">
               <label>Investment Range</label>
-                    <select name="InvestmentRange" id="InvestmentRange" class="form-control">
+                    <select name="investment_range" id="InvestmentRange" class="form-control">
                     <option value="0_to_5_lakh ">0 - 5,00,000 INR</option>
                     <option value="5_to_10_lakh">5,00,000 - 10,00,000 INR</option>
                     <option value="10_to_20_lakh">10,00,000 - 20,00,000 INR</option>
@@ -109,13 +120,14 @@ extract($_POST);
             </div>
             <div class="form-group">
               <label>Description</label>
-                <textarea id="Description" name="Description" rows="4" cols="50" class="form-control"></textarea>
+                <textarea id="Description" name="description" rows="4" cols="50" class="form-control"></textarea>
             </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-inverse btn-success" >Register</button>
+          <button type="submit" class="btn btn-inverse btn-success" >Register</button>
           <button type="button" class="btn btn-inverse btn-danger" data-dismiss="modal">Close</button>
         </div>
+        </form>
       </div>
       
     </div>

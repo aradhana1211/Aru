@@ -1,4 +1,19 @@
-<?php include("header.php");?>
+<?php include("header.php");
+            $full_name = $_POST["full_name"];
+            $email = $_POST["email"];
+            $phone = $_POST["phone"];
+            $looking_for_prop = $_POST["looking_for_prop"];
+            $have_shop = $_POST["have_shop"];
+            $category = $_POST["category"];
+            $brand_name = $_POST["brand_name"];
+            $outlet_location = $_POST["outlet_location"];
+            $investment_range = $_POST["investment_range"];
+            $description = $_POST["description"];
+            
+            if((isset($_POST)) ) {
+              mysqli_query($con,"insert into buy_franchise(full_name,email,phone,looking_for_prop,have_shop,category,brand_name,outlet_location,investment_range,description)values ('$full_name','$email','$phone','$looking_for_prop','$have_shop','$category','$brand_name','$outlet_location','$investment_range','$description')");
+              $status="Message Sent...!";
+            }?>
 
 			<section class="page_breadcrumbs ds color parallax section_padding_top_75 section_padding_bottom_75">
 				<div class="container">
@@ -56,36 +71,37 @@
          
         </div>
         <div class="modal-body">
+           <form  method="post" action="">
           <div class="form-group">
               <label>Full Name</label>
-              <input type="text" name="Name" class="form-control">
+              <input type="text" name="full_name" class="form-control">
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="text" name="Email" class="form-control">
+              <input type="text" name="email" class="form-control">
             </div>
             <div class="form-group">
               <label>Phone</label>
-              <input type="text" name="Phone" class="form-control">
+              <input type="text" name="phone" class="form-control">
             </div>
             <div class="form-group">
                <label>Looking for Property?</label>
             <div class="form-control">
-               <input type="radio" id="Yes" name="Looking_for_prop" value="Yes">Yes &nbsp;&nbsp;&nbsp;
-               <input type="radio" id="No" name="Looking_for_prop" value="No">No
+               <input type="radio" id="Yes" name="looking_for_prop" value="Yes">Yes &nbsp;&nbsp;&nbsp;
+               <input type="radio" id="No" name="looking_for_prop" value="No">No
             </div>
             </div>   
 
             <div class="form-group">
                <label>Have a Shop?</label>
             <div class="form-control">   
-               <input type="radio" id="Yes" name="Have_shop" value="Yes">Yes &nbsp;&nbsp;&nbsp;
-               <input type="radio" id="No" name="Have_shop" value="No">No
+               <input type="radio" id="Yes" name="have_shop" value="Yes">Yes &nbsp;&nbsp;&nbsp;
+               <input type="radio" id="No" name="have_shop" value="No">No
              </div>
              </div>
             <div class="form-group">
               <label>Business Catagory</label>
-                   <select name="Business" id="Business" class="form-control">
+                   <select name="category" id="Business" class="form-control">
                     <option value="Food_and_Beverages">Food & Beverages</option>
                     <option value="Retail">Retail</option>
                     <option value="Automobile">Automobile</option>
@@ -99,15 +115,15 @@
             </div>
             <div class="form-group">
               <label>Brand Name</label>
-              <input type="text" name="BrandName" class="form-control">
+              <input type="text" name="brand_name" class="form-control">
             </div>
             <div class="form-group">
               <label>Outlet Location Preferred</label>
-              <input type="text" name="OutletLocation" class="form-control">
+              <input type="text" name="outlet_location" class="form-control">
             </div>
              <div class="form-group">
               <label>Investment Range</label>
-                    <select name="InvestmentRange" id="InvestmentRange" class="form-control">
+                    <select name="investment_range" id="investment_range" class="form-control">
                     <option value="0_to_5_lakh ">0 - 5,00,000 INR</option>
                     <option value="5_to_10_lakh">5,00,000 - 10,00,000 INR</option>
                     <option value="10_to_20_lakh">10,00,000 - 20,00,000 INR</option>
@@ -117,13 +133,14 @@
             </div>
             <div class="form-group">
               <label>Description</label>
-                <textarea id="Description" name="Description" rows="4" cols="50" class="form-control"></textarea>
+                <textarea id="Description" name="description" rows="4" cols="50" class="form-control"></textarea>
             </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-inverse btn-success" >Register</button>
+          <button type="submit" class="btn btn-inverse btn-success" >Register</button>
           <button type="button" class="btn btn-inverse btn-danger" data-dismiss="modal">Close</button>
         </div>
+      </form>
       </div>
       
     </div>

@@ -1,4 +1,22 @@
-<?php include("header.php");?>
+<?php include("header.php");
+            $full_name = $_POST["full_name"];
+            $email = $_POST["email"];
+            $phone = $_POST["phone"];
+            $category = $_POST["category"];
+            $brand_name = $_POST["brand_name"];
+            $outlet_number = $_POST["outlet_number"];
+            $area_requirement = $_POST["area_requirement"];
+            $investment_range = $_POST["investment_range"];
+            $estd_date = $_POST["estd_date"];
+            $annual_net_profit = $_POST["annual_net_profit"];
+            $amount_take_away = $_POST["amount_take_away"];
+            $description = $_POST["description"];
+            
+            if((isset($_POST)) ) {
+              // echo "insert into sell_franchise(full_name,email,phone,category,brand_name,outlet_number,investment_range,area_requirement,estd_date,annual_net_profit,amount_take_away,description)values ('$full_name','$email','$phone','$category','$brand_name','$outlet_number','$investment_range','$area_requirement','$estd_date','$annual_net_profit','$amount_take_away','$description')";
+              mysqli_query($con,"insert into sell_franchise(full_name,email,phone,category,brand_name,outlet_number,investment_range,area_requirement,estd_date,annual_net_profit,amount_take_away,description)values ('$full_name','$email','$phone','$category','$brand_name','$outlet_number','$investment_range','$area_requirement','$estd_date','$annual_net_profit','$amount_take_away','$description')");
+              $status="Message Sent...!";
+            }?>
 
 			<section class="page_breadcrumbs ds color parallax section_padding_top_75 section_padding_bottom_75">
 				<div class="container">
@@ -57,21 +75,22 @@
        
         </div>
         <div class="modal-body">
+          <form  method="post" action="">
           <div class="form-group">
               <label>Full Name</label>
-              <input type="text" name="Name" class="form-control">
+              <input type="text" name="full_name" class="form-control">
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="text" name="Email" class="form-control">
+              <input type="text" name="email" class="form-control">
             </div>
             <div class="form-group">
               <label>Phone</label>
-              <input type="text" name="Phone" class="form-control">
+              <input type="text" name="phone" class="form-control">
             </div>
             <div class="form-group">
               <label>Business Catagory</label>
-                   <select name="Business" id="Business" class="form-control">
+                   <select name="category" id="Business" class="form-control">
                     <option value="Food_and_Beverages">Food & Beverages</option>
                     <option value="Retail">Retail</option>
                     <option value="Automobile">Automobile</option>
@@ -85,15 +104,15 @@
             </div>
             <div class="form-group">
               <label>Brand Name</label>
-              <input type="text" name="BrandName" class="form-control">
+              <input type="text" name="brand_name" class="form-control">
             </div>
              <div class="form-group">
               <label>No. of Outlets</label>
-              <input type="text" name="No_of_outlets" class="form-control">
+              <input type="text" name="outlet_number" class="form-control">
             </div> 
             <div class="form-group">
               <label>Investment Range</label>
-                    <select name="InvestmentRange" id="InvestmentRange" class="form-control">
+                    <select name="investment_range" id="InvestmentRange" class="form-control">
                     <option value="0_to_5_lakh ">0 - 5,00,000 INR</option>
                     <option value="5_to_10_lakh">5,00,000 - 10,00,000 INR</option>
                     <option value="10_to_20_lakh">10,00,000 - 20,00,000 INR</option>
@@ -103,29 +122,30 @@
             </div>
              <div class="form-group">
               <label>Area Requirement</label>
-              <input type="text" name="AreaRequirement" class="form-control">
+              <input type="text" name="area_requirement" class="form-control">
             </div>
              <div class="form-group">
               <label>Estd Date/Year</label>
-              <input type="text" name="Date" class="form-control">
+              <input type="text" name="estd_date" class="form-control">
             </div>
              <div class="form-group">
               <label>Annual Net Profit</label>
-              <input type="text" name="AnnualNetProfit" class="form-control">
+              <input type="text" name="annual_net_profit" class="form-control">
             </div>
              <div class="form-group">
               <label>Amount Take Away</label>
-              <input type="text" name="AmtTakeAway" class="form-control">
+              <input type="text" name="amount_take_away" class="form-control">
             </div>
             <div class="form-group">
               <label>Description</label>
-                <textarea id="Description" name="Description" rows="4" cols="50" class="form-control"></textarea>
+                <textarea id="Description" name="description" rows="4" cols="50" class="form-control"></textarea>
             </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-inverse btn-success" >Register</button>
+          <button type="submit" class="btn btn-inverse btn-success" >Register</button>
           <button type="button" class="btn btn-inverse btn-danger" data-dismiss="modal">Close</button>
         </div>
+      </form>
       </div>
       
     </div>
