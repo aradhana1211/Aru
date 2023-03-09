@@ -168,4 +168,73 @@ if(isset($_GET['contact_id']))
     
     echo " <meta http-equiv='refresh' content='0;URL=newsletter.php' />";
 }
+if(isset($_GET['buy_franchise']))
+{
+    $id = $_GET['buy_franchise']; 
+   $query = "DELETE FROM `buy_franchise` WHERE `id` = $id";
+    
+    $result = mysqli_query($con, $query);
+    
+    if($result)
+    {
+        echo 'Entry Deleted';
+    }else{
+        echo 'Entry Not Deleted';
+    }
+    mysqli_close($con);
+    
+    echo " <meta http-equiv='refresh' content='0;URL=buy_franchise.php' />";
+}
+if(isset($_GET['sell_franchise']))
+{
+    $id = $_GET['sell_franchise']; 
+   $query = "DELETE FROM `sell_franchise` WHERE `id` = $id";
+    
+    $result = mysqli_query($con, $query);
+    
+    if($result)
+    {
+        echo 'Entry Deleted';
+    }else{
+        echo 'Entry Not Deleted';
+    }
+    mysqli_close($con);
+    
+    echo " <meta http-equiv='refresh' content='0;URL=sell_franchise.php' />";
+}
+
+if(isset($_GET['buy_business']))
+{
+    $id = $_GET['buy_business']; 
+   $query = "DELETE FROM `buy_business` WHERE `id` = $id";
+    
+    $result = mysqli_query($con, $query);
+    
+    if($result)
+    {
+        echo 'Entry Deleted';
+    }else{
+        echo 'Entry Not Deleted';
+    }
+    mysqli_close($con);
+    
+    echo " <meta http-equiv='refresh' content='0;URL=buy_business.php' />";
+}
+if(isset($_GET['sell_id']))
+{
+    $id = $_GET['sell_id']; 
+   $query = "DELETE FROM `sell_business` WHERE `id` = $id";
+    
+    $result = mysqli_query($con, $query);
+    
+    if($result)
+    {
+        echo 'Entry Deleted';
+    }else{
+        echo 'Entry Not Deleted';
+    }
+    mysqli_close($con);
+    
+    echo " <meta http-equiv='refresh' content='0;URL=sell_business.php' />";
+}
 ?>

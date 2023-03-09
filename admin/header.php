@@ -341,6 +341,16 @@ if(!isset($_SESSION["user_name"]))
 
                 </li>
 
+                <li class="nav-item">
+                  <a href="manage.php" class="nav-link">
+                    <i class="nav-icon far fa-newspaper"></i>
+                    <span class="nav-text fadeable">
+                    <span>Manage Website</span>
+                    </span>
+                  </a>
+                  <b class="sub-arrow"></b>
+                </li>
+
               </ul>
 
             </div><!-- /.sidebar scroll -->
